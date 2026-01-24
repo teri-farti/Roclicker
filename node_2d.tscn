@@ -1,0 +1,232 @@
+[gd_scene load_steps=12 format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Script" uid="uid://dt3nc4our1mgp" path="res://node_2d.gd" id="1_0hol4"]
+[ext_resource type="Shader" uid="uid://cxjkxj08b0y80" path="res://node_2d.gdshader" id="2_d21ai"]
+[ext_resource type="Texture2D" uid="uid://buowg1mabhn1n" path="res://Untitled56_20260124130750.png" id="2_epypp"]
+[ext_resource type="AudioStream" uid="uid://chjfka1xynjch" path="res://Hit.wav" id="4_d21ai"]
+[ext_resource type="AudioStream" uid="uid://co4q368ypvyld" path="res://Jump.wav" id="5_rj586"]
+[ext_resource type="AudioStream" uid="uid://dlc3oq8rrq1ey" path="res://PowerUp.wav" id="6_4d7sh"]
+[ext_resource type="AudioStream" uid="uid://c17rq75itb8je" path="res://464917_plasterbrain_ambient-loop-am-i-in-space-or-what (online-audio-converter.com).wav" id="7_ir8iy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rj586"]
+shader = ExtResource("2_d21ai")
+shader_parameter/offset = 0.0
+
+[sub_resource type="Gradient" id="Gradient_kdubu"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d21ai"]
+gradient = SubResource("Gradient_kdubu")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Environment" id="Environment_0hol4"]
+glow_enabled = true
+glow_blend_mode = 0
+adjustment_enabled = true
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0hol4")
+metadata/_edit_vertical_guides_ = [-1452.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_rj586")
+offset_left = -46.0
+offset_top = -26.0
+offset_right = 2476.0
+offset_bottom = 1639.0
+texture = SubResource("GradientTexture2D_d21ai")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -342.0
+offset_right = 16.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -594.5
+offset_top = -230.5
+offset_right = 558.5
+offset_bottom = 334.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stone" type="TextureButton" parent="CanvasLayer/Control/CenterContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_epypp")
+stretch_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -303.0
+offset_top = 75.0
+offset_right = -45.0
+offset_bottom = -43.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 284.0
+offset_top = 17.0
+offset_right = -65.0
+offset_bottom = 226.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 75
+text = "points
+"
+vertical_alignment = 1
+
+[node name="FinalChoicePanel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_left = -1417.0
+offset_top = -1326.0
+offset_right = 4177.0
+offset_bottom = 2266.0
+
+[node name="CleanseButton" type="Button" parent="CanvasLayer/FinalChoicePanel"]
+layout_mode = 0
+offset_left = 1442.0
+offset_top = 1770.0
+offset_right = 1791.0
+offset_bottom = 1941.0
+text = "я хочу очиститься от радиации..."
+
+[node name="RadianceButton" type="Button" parent="CanvasLayer/FinalChoicePanel"]
+layout_mode = 0
+offset_left = 2127.0
+offset_top = 1769.0
+offset_right = 2527.0
+offset_bottom = 1950.0
+text = "Нет я не хочу терять всё!!!"
+
+[node name="SettingsPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_right = 1158.0
+offset_bottom = 687.0
+
+[node name="label1" type="Label" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 105.0
+offset_right = 257.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 50
+text = "Музыка"
+structured_text_bidi_override_options = [null, null, null, null, null, null, null, null, null, null]
+
+[node name="Label2" type="Label" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 103.0
+offset_right = 790.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 50
+text = "Эффекты"
+
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 136.0
+offset_right = 327.0
+offset_bottom = 242.0
+value = 100.0
+
+[node name="SfxSlider" type="HSlider" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 148.0
+offset_right = 844.0
+offset_bottom = 224.0
+value = 100.0
+
+[node name="Button" type="Button" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 565.0
+offset_right = 1115.0
+offset_bottom = 655.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Удалить сохранение
+"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="CanvasLayer/SettingsPanel"]
+title = "Вы уверены?"
+ok_button_text = "Да"
+cancel_button_text = "Нет"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 156.0
+offset_bottom = 61.0
+text = "Настройки"
+
+[node name="WhiteFade" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_left = -134.0
+offset_top = -36.0
+offset_right = 1296.0
+offset_bottom = 709.0
+color = Color(1, 1, 1, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer"]
+position = Vector2(563, 376)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0hol4")
+
+[node name="SoundClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_d21ai")
+bus = &"SFX"
+
+[node name="SoundSolar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rj586")
+bus = &"SFX"
+
+[node name="SoundBuy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4d7sh")
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("7_ir8iy")
+autoplay = true
+bus = &"Music"
+
+[node name="AutoClickTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/Stone" to="." method="_on_stone_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/Stone" to="CanvasLayer" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/FinalChoicePanel/CleanseButton" to="." method="ending_reset"]
+[connection signal="pressed" from="CanvasLayer/FinalChoicePanel/RadianceButton" to="." method="ending_white_out"]
+[connection signal="value_changed" from="CanvasLayer/SettingsPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/SettingsPanel/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/SettingsPanel/Button" to="." method="_on_delete_save_pressed"]
+[connection signal="confirmed" from="CanvasLayer/SettingsPanel/ConfirmationDialog" to="." method="_on_confirm_delete_dialog_confirmed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="toggle_settings"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
