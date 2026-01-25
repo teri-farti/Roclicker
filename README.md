@@ -16,7 +16,6 @@
 -----
 
 ##​ Dual Endings
-
 A final decision-making mechanic where the player must choose between systemic preservation or total radiation-induced collapse.
 ​Multi-Platform Support: Fully compatible with Android, Windows, and Linux.
 ​Audio Integration: Contextual sound effects for clicking, purchasing, and solar events.
@@ -42,3 +41,9 @@ A final decision-making mechanic where the player must choose between systemic p
 ​Download the binary file corresponding to your operating system (Android, Windows, or Linux) from the Releases section.
 ​Install the file on your device (for Android, ensure "Install from Unknown Sources" is enabled if installing via APK).
 ​Launch the executable.
+
+
+## Developer
+
+teri-farti - tf_game
+Webite: https://teri-farti.github.io/tf_game_page/ GitHub: https://github.com/teri-farti
