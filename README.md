@@ -47,4 +47,5 @@ A final decision-making mechanic where the player must choose between systemic p
 ## Developer
 
 teri-farti - tf_game
-Webite: https://teri-farti.github.io/tf_game_page/ GitHub: https://github.com/teri-farti
+Webite: https://teri-farti.github.io/tf_game_page/ 
+GitHub: https://github.com/teri-farti
