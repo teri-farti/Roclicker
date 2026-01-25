@@ -15,7 +15,8 @@
 ​Economy System: 20 distinct upgrade tiers with exponential scaling to balance progression difficulty.
 -----
 
-##​ Dual Endings
+## Endings
+
 A final decision-making mechanic where the player must choose between systemic preservation or total radiation-induced collapse.
 ​Multi-Platform Support: Fully compatible with Android, Windows, and Linux.
 ​Audio Integration: Contextual sound effects for clicking, purchasing, and solar events.
