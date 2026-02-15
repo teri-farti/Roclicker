@@ -1,22 +1,49 @@
-[gd_scene load_steps=12 format=3 uid="uid://4pqund3nukl7"]
+[gd_scene load_steps=21 format=3 uid="uid://4pqund3nukl7"]
 
-[ext_resource type="Script" uid="uid://dt3nc4our1mgp" path="res://node_2d.gd" id="1_0hol4"]
-[ext_resource type="Shader" uid="uid://cxjkxj08b0y80" path="res://node_2d.gdshader" id="2_d21ai"]
+[ext_resource type="Script" path="res://node_2d.gd" id="1_0hol4"]
+[ext_resource type="Shader" path="res://node_2d.gdshader" id="2_d21ai"]
 [ext_resource type="Texture2D" uid="uid://buowg1mabhn1n" path="res://Untitled56_20260124130750.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://dxnqnag3fq7xb" path="res://i(1).png" id="3_jt1hm"]
+[ext_resource type="FontFile" uid="uid://di3te6hox61a2" path="res://DwarvenStonecraftCyr.otf" id="4_8f1vb"]
 [ext_resource type="AudioStream" uid="uid://chjfka1xynjch" path="res://Hit.wav" id="4_d21ai"]
 [ext_resource type="AudioStream" uid="uid://co4q368ypvyld" path="res://Jump.wav" id="5_rj586"]
 [ext_resource type="AudioStream" uid="uid://dlc3oq8rrq1ey" path="res://PowerUp.wav" id="6_4d7sh"]
-[ext_resource type="AudioStream" uid="uid://c17rq75itb8je" path="res://464917_plasterbrain_ambient-loop-am-i-in-space-or-what (online-audio-converter.com).wav" id="7_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://dfi53xyav81aj" path="res://7eq2jepf.jpg" id="6_6ywjw"]
+[ext_resource type="Texture2D" uid="uid://b4masf3460iu" path="res://png-clipart-gear-icon-gears-file-transport-transportation-Photoroom.png" id="6_kx815"]
+[ext_resource type="Texture2D" uid="uid://cep0dpi4xy6fo" path="res://5079.jpg" id="7_unx4e"]
+[ext_resource type="AudioStream" uid="uid://dnjm4qfvxkjk" path="res://464917_plasterbrain_ambient-loop-am-i-in-space-or-what (online-audio-converter.com).mp3" id="12_dar7h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rj586"]
 shader = ExtResource("2_d21ai")
 shader_parameter/offset = 0.0
 
-[sub_resource type="Gradient" id="Gradient_kdubu"]
+[sub_resource type="Theme" id="Theme_f5jhg"]
+default_font = ExtResource("4_8f1vb")
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_d21ai"]
-gradient = SubResource("Gradient_kdubu")
-fill_to = Vector2(1, 1)
+[sub_resource type="Theme" id="Theme_uhafg"]
+
+[sub_resource type="FontVariation" id="FontVariation_7f4d2"]
+base_font = ExtResource("4_8f1vb")
+
+[sub_resource type="Theme" id="Theme_352rw"]
+default_font = ExtResource("4_8f1vb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sok4x"]
+bg_color = Color(0, 0, 0, 0.462745)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6j1lt"]
+bg_color = Color(0, 0, 0, 0.368627)
+draw_center = false
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(1, 1, 1, 0.886275)
 
 [sub_resource type="Environment" id="Environment_0hol4"]
 glow_enabled = true
@@ -31,11 +58,12 @@ metadata/_edit_vertical_guides_ = [-1452.0]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_rj586")
-offset_left = -46.0
-offset_top = -26.0
-offset_right = 2476.0
-offset_bottom = 1639.0
-texture = SubResource("GradientTexture2D_d21ai")
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 1916.0
+offset_bottom = 1072.0
+scale = Vector2(0.152, 0.152)
+texture = ExtResource("3_jt1hm")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -49,6 +77,7 @@ offset_right = 16.0
 offset_bottom = 329.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_f5jhg")
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -57,12 +86,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -594.5
-offset_top = -230.5
-offset_right = 558.5
-offset_bottom = 334.5
+offset_left = -282.5
+offset_top = -122.5
+offset_right = 2207.5
+offset_bottom = 1332.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme = SubResource("Theme_uhafg")
 
 [node name="Stone" type="TextureButton" parent="CanvasLayer/Control/CenterContainer"]
 layout_mode = 2
@@ -95,6 +126,8 @@ offset_top = 17.0
 offset_right = -65.0
 offset_bottom = 226.0
 grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_7f4d2")
 theme_override_font_sizes/font_size = 75
 text = "points
 "
@@ -106,6 +139,7 @@ offset_left = -1417.0
 offset_top = -1326.0
 offset_right = 4177.0
 offset_bottom = 2266.0
+theme = SubResource("Theme_352rw")
 
 [node name="CleanseButton" type="Button" parent="CanvasLayer/FinalChoicePanel"]
 layout_mode = 0
@@ -125,25 +159,30 @@ text = "Нет я не хочу терять всё!!!"
 
 [node name="SettingsPanel" type="Panel" parent="CanvasLayer"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 offset_right = 1158.0
 offset_bottom = 687.0
 
-[node name="label1" type="Label" parent="CanvasLayer/SettingsPanel"]
+[node name="MusicLabel" type="Label" parent="CanvasLayer/SettingsPanel"]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 105.0
-offset_right = 257.0
-offset_bottom = 211.0
+offset_left = 88.0
+offset_top = 156.0
+offset_right = 285.0
+offset_bottom = 262.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8f1vb")
 theme_override_font_sizes/font_size = 50
 text = "Музыка"
 structured_text_bidi_override_options = [null, null, null, null, null, null, null, null, null, null]
 
-[node name="Label2" type="Label" parent="CanvasLayer/SettingsPanel"]
+[node name="SfxLabel" type="Label" parent="CanvasLayer/SettingsPanel"]
 layout_mode = 0
-offset_left = 544.0
-offset_top = 103.0
-offset_right = 790.0
-offset_bottom = 201.0
+offset_left = 585.0
+offset_top = 156.0
+offset_right = 831.0
+offset_bottom = 254.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8f1vb")
 theme_override_font_sizes/font_size = 50
 text = "Эффекты"
 
@@ -163,15 +202,17 @@ offset_right = 844.0
 offset_bottom = 224.0
 value = 100.0
 
-[node name="Button" type="Button" parent="CanvasLayer/SettingsPanel"]
+[node name="DeleteButton" type="Button" parent="CanvasLayer/SettingsPanel"]
 layout_mode = 0
-offset_left = 583.0
-offset_top = 565.0
-offset_right = 1115.0
-offset_bottom = 655.0
+offset_left = 624.0
+offset_top = 583.0
+offset_right = 1156.0
+offset_bottom = 671.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8f1vb")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_sok4x")
 text = "Удалить сохранение
 "
 
@@ -180,10 +221,41 @@ title = "Вы уверены?"
 ok_button_text = "Да"
 cancel_button_text = "Нет"
 
+[node name="Button2" type="Button" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 282.0
+offset_right = 1303.0
+offset_bottom = 1120.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("6_6ywjw")
+
+[node name="Button3" type="Button" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 284.0
+offset_right = 1436.0
+offset_bottom = 1092.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("7_unx4e")
+
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_right = 156.0
-offset_bottom = 61.0
-text = "Настройки"
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 514.0
+offset_bottom = 511.0
+scale = Vector2(0.15, 0.15)
+theme_override_fonts/font = ExtResource("4_8f1vb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6j1lt")
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_kx815")
 
 [node name="WhiteFade" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -213,7 +285,7 @@ bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("7_ir8iy")
+stream = ExtResource("12_dar7h")
 autoplay = true
 bus = &"Music"
 
@@ -226,7 +298,9 @@ autostart = true
 [connection signal="pressed" from="CanvasLayer/FinalChoicePanel/RadianceButton" to="." method="ending_white_out"]
 [connection signal="value_changed" from="CanvasLayer/SettingsPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/SettingsPanel/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="CanvasLayer/SettingsPanel/Button" to="." method="_on_delete_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingsPanel/DeleteButton" to="." method="_on_delete_save_pressed"]
 [connection signal="confirmed" from="CanvasLayer/SettingsPanel/ConfirmationDialog" to="." method="_on_confirm_delete_dialog_confirmed"]
+[connection signal="pressed" from="CanvasLayer/SettingsPanel/Button2" to="." method="_on_ru_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingsPanel/Button3" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="toggle_settings"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]

@@ -13,7 +13,7 @@ config_version=5
 config/name="Roclicker "
 config/version="1.0"
 run/main_scene="res://node_2d.tscn"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.3", "Mobile")
 config/icon="uid://buowg1mabhn1n"
 
 [display]
@@ -23,3 +23,4 @@ window/stretch/mode="canvas_items"
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
